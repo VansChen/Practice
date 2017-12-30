@@ -1,2 +1,2 @@
-# School
-For School Project
+# Practice
+
