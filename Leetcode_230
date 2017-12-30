@@ -37,3 +37,5 @@ class Solution {
 }
 
 //by my own, but kind of slow
+
+//Follow up => may store the order of BST in the array
