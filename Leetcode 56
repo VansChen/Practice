@@ -1,0 +1,45 @@
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
+class Solution {
+    public List<Interval> merge(List<Interval> intervals) {
+        List<Interval> result = new LinkedList<Interval>(); 
+        //edge
+        if (intervals==null) return result;
+        int [] start = new int[intervals.size()+1]; 
+        int [] end = new int[intervals.size()]; 
+        for(int i=0;i<intervals.size();i++){
+            start[i]= intervals.get(i).start;  //please do not forget to use get() for list
+            end[i]= intervals.get(i).end;
+        }
+        
+        Arrays.sort(start);
+        Arrays.sort(end);
+        
+        //should know how to create the new intervals
+        int st = start[0];
+        int ed = end[0];
+        start[intervals.size()]=Integer.MAX_VALUE;
+        
+        for(int i=0;i<intervals.size();i++){
+             if (end[i] < start[i+1]){
+                //int st = start[i];
+                //int ed = end[i];
+                Interval val = new Interval(st,ed);
+                result.add(val);
+                st = start[i+1];
+                ed = end[i+1];
+            }
+            else{
+                ed = end[i+1];
+            }
+        }
+         return result; 
+    }
+}
