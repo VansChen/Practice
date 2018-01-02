@@ -18,8 +18,7 @@ class Solution {
              result=y;
              break;
      }
-     }  
-        
+     }     
      return result;
 }
 }
