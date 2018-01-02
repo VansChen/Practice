@@ -1,0 +1,25 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+     
+     int [] store = new int[26];
+        
+     for (int i=0; i<s.length();i++){
+         char x = s.charAt(i);
+         //store[x-'a']=store[x-'a']+1;
+         store[x-'a']++;                 //which can get integer
+     }   
+     
+     char result = 'a';   
+     for (int i=0; i<t.length();i++){
+         char y = t.charAt(i);
+         //store[y-'a']=store[y-'a']-1;
+         store[y-'a']--;
+         if((store[y-'a'])<0){
+             result=y;
+             break;
+     }
+     }  
+        
+     return result;
+}
+}
