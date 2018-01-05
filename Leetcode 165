@@ -7,15 +7,24 @@ class Solution {
         for(int i=0; i<Math.max(v1.length,v2.length);i++){
             //do not know which is longer
             
-            int vv1 = Integer.parseInt(v1[i]);
-            int vv2 = Integer.parseInt(v2[i]);
+            //int vv1 = Integer.parseInt(v1[i]);  //cannot write like this, since when i>=v1.length or i>=v1.length, which is 
+            //int vv2 = Integer.parseInt(v2[i]);  //not number anymore, so int vv1 or vv2 cannot receive 
+            int vv1 = 0;
+            int vv2 = 0;
             
             if (i>=v1.length){
                 vv1=0;
             }
+            else{
+                vv1 = Integer.parseInt(v1[i]); 
+            }
+            
             if (i>=v2.length){
                 vv2=0;
             } 
+             else{
+                vv2 = Integer.parseInt(v2[i]);
+            }
             
             
             if(vv1>vv2){
@@ -28,5 +37,3 @@ class Solution {
         return 0;        
     }
 }
-
-//error
